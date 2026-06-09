@@ -18,6 +18,7 @@ age = 18
 weight = 187.3
 half_age = age / 2
 
+
 #print a sentence with name, age, and weight
 print(f"My name is {first_name} {last_name}.\nI am {age} years old and I weigh {weight} lbs.")
 
