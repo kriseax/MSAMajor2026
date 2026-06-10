@@ -15,6 +15,18 @@ def get_nonnegative_float_from_user(prompt, must_be_less_than_24):
     
     return input_value
 
+def print_pay_advice(hours, hourly_wage, annual_wage, tax_amount, wage_minus_tax):
+    #output results
+    print(f"\nPay Advice")
+    print(f"-------------")
+    print(f"Hours Worked: {hours}")
+    print(f"Hourly Wage: ${hourly_wage}")
+    print(f"Wages Before Taxes: ${annual_wage:.2f}")
+    print(f"Tax Amount: ${tax_amount:.2f}")
+    print(f"Annual Wage After Taxes: ${wage_minus_tax:.2f}")
+    return
+
+
 def main():
     #declare known variable values
     #12% tax rate
@@ -37,14 +49,8 @@ def main():
     #calculate annual wage minus tax
     annual_wage_minus_tax = annual_wage - tax_amount
 
-    #output results
-    print(f"\nPay Advice")
-    print(f"-------------")
-    print(f"Hours Worked: {hours}")
-    print(f"Hourly Wage: ${hourly_wage}")
-    print(f"Wages Before Taxes: ${annual_wage:.2f}")
-    print(f"Tax Amount: ${tax_amount:.2f}")
-    print(f"Annual Wage After Taxes: ${annual_wage_minus_tax:.2f}")
+    #print pay advice
+    print_pay_advice(hours, hourly_wage, annual_wage, tax_amount, annual_wage_minus_tax)
 
 main()
     
