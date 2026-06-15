@@ -23,14 +23,15 @@ def main():
             print("ERROR: X and Z must be integers")
             continue
         
-
         #Determine the operation to carry out based on the value of the operator
         #Use if/elif/else block to evaluate the operator and carry out the appropriate operation
         #Output the answer
-        if operator not in ["+", "-", "*", "/"]:
+        valid_operators = ["+", "-", "*", "/"]
+        if operator not in valid_operators:
             print("ERROR: Operator must be (+, -, *, /)")
             continue
 
+        #Do the math
         if operator == "+":
             answer = x + z
         elif operator == "-":
@@ -44,8 +45,8 @@ def main():
             answer = x / z
         # run the expression and print output formatted t one decimal place
 
+        #Print output
         print(f"{x} {operator} {z} = {answer:.1f}")
-        break
 
         #ask the user if they want to evaluate another expression
         do_again = input("Do you want to evaluate another expression? (Press y to continue): ")
@@ -53,6 +54,6 @@ def main():
         #rerun the program if the user wants to continue, otherwise end the program
         if do_again.lower() != "y":
             break
-
-
+        
+        
 main()
