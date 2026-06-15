@@ -47,5 +47,12 @@ def main():
         print(f"{x} {operator} {z} = {answer:.1f}")
         break
 
+        #ask the user if they want to evaluate another expression
+        do_again = input("Do you want to evaluate another expression? (Press y to continue): ")
+
+        #rerun the program if the user wants to continue, otherwise end the program
+        if do_again.lower() != "y":
+            break
+
 
 main()
