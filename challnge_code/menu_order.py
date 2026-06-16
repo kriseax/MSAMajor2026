@@ -14,7 +14,7 @@ def main():
     total = 0
     while True:
         #prompt user for the item
-        item = input("\nItem: ").capitalize()
+        item = input("\nItem: ").title()
 
         #check if we need to end the program
         if item.lower() == "end":
