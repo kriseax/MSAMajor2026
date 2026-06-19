@@ -15,7 +15,7 @@ Create get/set methods where appropriate
 
 You will have 3 additional methods
 
-- get_class_level: determine the class based on the students credit hours. Method will retur
+- get_class_level: determine the class based on the students credit hours. Method will return:
   - "Freshman": 0 - 30 hours
   - "Sophomore": 31 - 60 hours
   - "Junior": 61 - 90 hours
