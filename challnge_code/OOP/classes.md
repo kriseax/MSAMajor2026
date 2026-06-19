@@ -1,6 +1,6 @@
 # Challenge Student Class
 
-You will create a student class and a student generator program to test you class.
+You will create a student class and a student generator program to test your class.
 
 ## Requirements
 Create a student Class with these attributes. Remember to use the **__** to make them private.
