@@ -13,7 +13,25 @@ Function to request student data from the api
 Input: url
 Output: JSON student data
 """
+def get_student_data(url:str):
+    #make a request
+    response = requests.get(url)
 
+    #convert the format to JSON
+    response_json = response.json()
+
+    #return the response
+    return response_json
+
+#create a route for the website index/root/homepage. Will display all student data
+@app.route('/', methods=['GET'])
+def index():
+    #make a request to the student data api for all students
+    url = "http://127.0.0.1:5000/api/students/all"
+
+    #get the student data
+    student_data = get_student_data(url)
+    return render_template('index.html', student_data=student_data)
 
 
 #run the flask app
