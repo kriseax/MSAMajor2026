@@ -1,7 +1,12 @@
 
 from Student import Student
 
-def main():
+"""
+Function to return a list of student objects
+Input: none
+Output: list of student objects
+"""
+def load_students() -> list[Student]:
     #Create 2 instances of Student
     list_of_students = []
 
@@ -42,8 +47,50 @@ def main():
 
         new_student = Student(first_name, last_name, major, credit_hours, gpa, student_id)
         list_of_students.append(new_student)
+    
+    return list_of_students
 
+"""
+Function to convert student objects into student dictionaries
+Input: lisst of student objects
+Output: list of student dictionaries
+"""
+def student_to_dictionary(list_of_students: list[Student]) -> list[dict]:
+    #create an empty list to store the dictionaries
+    student_dictionary_list = []
+
+    #loop through the list of students and write each students data to a dictionary
     for student in list_of_students:
-        student.print_student_data()
+        #create an empty dictionary
+        student_dictionary = {}
 
-main()
+        #make entries into the dictionary using the student properties
+        #firstname, last name, major, gpa, class, id
+        student_dictionary['first_name'] = student.get_first_name()
+        student_dictionary['last_name'] = student.get_last_name()
+        student_dictionary['major'] = student.get_major()
+        student_dictionary['gpa'] = student.get_gpa()
+        student_dictionary['class'] = student.get_class_level()
+        student_dictionary['id'] = student.get_ID()
+
+        #append the dictionary to the list of dictionaries
+        student_dictionary_list.append(student_dictionary)
+
+    #return the list of dictionaries
+    return student_dictionary_list
+
+"""
+Function to get student dictionaries
+Input: None
+Output: a list of student dictionaries
+"""
+def get_student_dictionaries():
+    #get a list of students
+    student_list = load_students()
+
+    #get a list of student dictionaries
+    student_dictionaries = student_to_dictionary(student_list)
+
+    return student_dictionaries
+
+
